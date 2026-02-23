@@ -197,6 +197,27 @@ hr {
     width: 60%;
 }
 
+/* Education Card */
+.card {
+    background: #f9f9ff;
+    border: 1px solid #cdd3ff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Intro text */
+.intro {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #6b7280;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse
+
 
 
 
