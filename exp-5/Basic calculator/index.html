@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Modern Simple Calculator</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to right,#e8e2e3,#e9e1e2);
+    font-family:Arial;
+}
+
+.calculator{
+    background:#d6d0d2;
+    padding:30px;
+    border-radius:25px;
+    width:350px;
+    text-align:center;
+    box-shadow:10px 10px 20px #080607,
+               -10px -10px 20px #000000;
+}
+
+.result-box{
+    background:#3b2d33;
+    padding:20px;
+    border-radius:15px;
+    color:#4cff9d;
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+h2{
+    color:#ddd;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:15px;
+    background:#3b2d33;
+    color:#4cff9d;
+    font-size:18px;
+    text-align:center;
+}
+
+.buttons{
+    margin-top:20px;
+}
+
+button{
+    width:60px;
+    height:60px;
+    margin:10px;
+    border:none;
+    border-radius:15px;
+    font-size:22px;
+    cursor:pointer;
+    background:#dfe4e6;
+}
+
+button:active{
+    transform:scale(0.95);
+}
+
+.footer-text{
+    margin-top:20px;
+    color:#ddd;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+
+    <div class="result-box" id="result">
+        Result:
+    </div>
+
+    <h2>Enter Numbers Below</h2>
+
+    <input type="number" id="num1" placeholder="Enter 1st number">
+    <input type="number" id="num2" placeholder="Enter 2nd number">
+
+    <div class="buttons">
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('*')">*</button>
+        <button onclick="calculate('/')">/</button>
+    </div>
+
+    <div class="footer-text">
+        Tap Operator to Calculate
+    </div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
