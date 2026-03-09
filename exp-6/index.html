@@ -8,7 +8,7 @@
 
 <body>
 
-    <div class="container">
+ <div class="container">
 
 <div class="header">
 <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
@@ -119,11 +119,13 @@
 
 </form>
 
-<div id="output"></div>
+<div id="result"></div>
 
 </div>
 
 <script>
+
+/* Script runs after page loads */
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -132,6 +134,8 @@ const submitBtn = document.getElementById("submit");
 submitBtn.addEventListener("click", function(event){
 
 event.preventDefault();
+
+/* Get form values */
 
 var fname = document.getElementById("fname").value;
 var lname = document.getElementById("lname").value;
@@ -156,12 +160,14 @@ var city = document.getElementById("city").value;
 var state = document.getElementById("state").value;
 var zip = document.getElementById("zip").value;
 
-var output = document.getElementById("output");
+/* Display output */
 
-output.innerHTML = `
-<div class="output">
+const resultDiv = document.getElementById("result");
 
-<h3>Submitted Information</h3>
+resultDiv.innerHTML = `
+<div class="output-card">
+
+<h2>Submitted Details</h2>
 
 <p><b>First Name:</b> ${fname}</p>
 <p><b>Last Name:</b> ${lname}</p>
@@ -172,7 +178,7 @@ output.innerHTML = `
 <p><b>Ethnicity:</b> ${ethnicity}</p>
 
 <p><b>Email:</b> ${email}</p>
-<p><b>Phone:</b> ${phone}</p>
+<p><b>Phone No:</b> ${phone}</p>
 
 <p><b>Grade:</b> ${grade}</p>
 <p><b>Semester:</b> ${semester}</p>
@@ -182,12 +188,27 @@ output.innerHTML = `
 
 <p><b>City:</b> ${city}</p>
 <p><b>State:</b> ${state}</p>
+
 <p><b>Zip Code:</b> ${zip}</p>
+
+<button class="copy-btn" onclick="copyDetails()">Copy</button>
 
 </div>
 `;
 
 });
+
+/* Copy function */
+
+window.copyDetails = function(){
+
+var text = document.getElementById("result").innerText;
+
+navigator.clipboard.writeText(text);
+
+alert("Details Copied!");
+
+}
 
 });
 
